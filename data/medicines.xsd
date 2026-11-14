@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Medicines" type="MedicinesType"/>
+
+    <xs:complexType name="MedicinesType">
+        <xs:sequence>
+            <xs:element name="Medicine" type="MedicineType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MedicineType">
+        <xs:sequence>
+            <xs:element name="Name" type="ShortText"/>
+            <xs:element name="Pharm" type="ShortText"/>
+            <xs:element name="Group" type="MedicineGroup"/>
+            <xs:element name="Analogs" type="AnalogsType" minOccurs="0"/>
+            <xs:element name="Versions" type="VersionsType">
+                <xs:unique name="uniqueVersionForm">
+                    <xs:selector xpath="Version"/>
+                    <xs:field xpath="@form"/>
+                </xs:unique>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="MedicineId" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="AnalogsType">
+        <xs:sequence>
+            <xs:element name="Analog" type="ShortText" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VersionsType">
+        <xs:sequence>
+            <xs:element name="Version" type="VersionType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VersionType">
+        <xs:sequence>
+            <xs:element name="Manufacturer" type="ManufacturerType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="form" type="MedicineForm" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="ManufacturerType">
+        <xs:sequence>
+            <xs:element name="Certificate" type="CertificateType"/>
+            <xs:element name="Package" type="PackageType"/>
+            <xs:element name="Dosage" type="DosageType"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="ShortText" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="CertificateType">
+        <xs:sequence>
+            <xs:element name="Organization" type="ShortText"/>
+        </xs:sequence>
+        <xs:attribute name="number" type="CertificateNumber" use="required"/>
+        <xs:attribute name="issued" type="xs:date" use="required"/>
+        <xs:attribute name="expires" type="xs:date" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PackageType">
+        <xs:attribute name="type" type="PackageKind" use="required"/>
+        <xs:attribute name="quantity" type="QuantityValue" use="required"/>
+        <xs:attribute name="price" type="PriceValue" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="DosageType">
+        <xs:attribute name="unit" type="DosageUnit" use="required"/>
+        <xs:attribute name="amount" type="AmountValue" use="required"/>
+        <xs:attribute name="timesPerDay" type="TimesPerDayValue" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="MedicineId">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="MED-[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ShortText">
+        <xs:restriction base="xs:token">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MedicineGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="antibiotic"/>
+            <xs:enumeration value="analgesic"/>
+            <xs:enumeration value="vitamin"/>
+            <xs:enumeration value="antiviral"/>
+            <xs:enumeration value="antiseptic"/>
+            <xs:enumeration value="antihistamine"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MedicineForm">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="tablet"/>
+            <xs:enumeration value="capsule"/>
+            <xs:enumeration value="powder"/>
+            <xs:enumeration value="drops"/>
+            <xs:enumeration value="syrup"/>
+            <xs:enumeration value="ointment"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PackageKind">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="blister"/>
+            <xs:enumeration value="bottle"/>
+            <xs:enumeration value="box"/>
+            <xs:enumeration value="tube"/>
+            <xs:enumeration value="sachet"/>
+            <xs:enumeration value="ampoule"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DosageUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mcg"/>
+            <xs:enumeration value="mg"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="ml"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CertificateNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="UA/[0-9]{4,5}/[0-9]{2}/[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="QuantityValue">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:maxInclusive value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PriceValue">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+            <xs:maxInclusive value="100000"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="AmountValue">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+            <xs:maxInclusive value="5000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TimesPerDayValue">
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
