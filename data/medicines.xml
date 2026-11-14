@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medicines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="medicines.xsd">
+
+    <Medicine id="MED-001">
+        <Name>Amoxicillin</Name>
+        <Pharm>Farmak</Pharm>
+        <Group>antibiotic</Group>
+        <Analogs>
+            <Analog>Ospamox</Analog>
+            <Analog>Flemoxin Solutab</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="capsule">
+                <Manufacturer name="Farmak">
+                    <Certificate number="UA/10234/01/01" issued="2021-03-15" expires="2026-03-15">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="16" price="85.50"/>
+                    <Dosage unit="mg" amount="500" timesPerDay="3"/>
+                </Manufacturer>
+                <Manufacturer name="Darnitsa">
+                    <Certificate number="UA/10987/01/01" issued="2022-06-01" expires="2027-06-01">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="20" price="98.00"/>
+                    <Dosage unit="mg" amount="500" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+            <Version form="powder">
+                <Manufacturer name="Farmak">
+                    <Certificate number="UA/10235/02/01" issued="2021-03-15" expires="2026-03-15">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="bottle" quantity="1" price="110.00"/>
+                    <Dosage unit="mg" amount="250" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+    <Medicine id="MED-002">
+        <Name>Azithromycin</Name>
+        <Pharm>Zdorovye</Pharm>
+        <Group>antibiotic</Group>
+        <Analogs>
+            <Analog>Sumamed</Analog>
+            <Analog>Azitrox</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="tablet">
+                <Manufacturer name="Zdorovye">
+                    <Certificate number="UA/12011/01/01" issued="2023-01-20" expires="2028-01-20">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="3" price="140.00"/>
+                    <Dosage unit="mg" amount="500" timesPerDay="1"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+    <Medicine id="MED-003">
+        <Name>Paracetamol</Name>
+        <Pharm>Darnitsa</Pharm>
+        <Group>analgesic</Group>
+        <Analogs>
+            <Analog>Panadol</Analog>
+            <Analog>Efferalgan</Analog>
+            <Analog>Calpol</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="tablet">
+                <Manufacturer name="Darnitsa">
+                    <Certificate number="UA/09876/01/01" issued="2020-09-10" expires="2025-09-10">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="10" price="18.90"/>
+                    <Dosage unit="mg" amount="500" timesPerDay="4"/>
+                </Manufacturer>
+            </Version>
+            <Version form="syrup">
+                <Manufacturer name="Zdorovye">
+                    <Certificate number="UA/11450/03/01" issued="2024-02-05" expires="2029-02-05">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="bottle" quantity="1" price="62.00"/>
+                    <Dosage unit="mg" amount="120" timesPerDay="4"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+    <Medicine id="MED-004">
+        <Name>Ibuprofen</Name>
+        <Pharm>Farmak</Pharm>
+        <Group>analgesic</Group>
+        <Analogs>
+            <Analog>Nurofen</Analog>
+            <Analog>Advil</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="tablet">
+                <Manufacturer name="Farmak">
+                    <Certificate number="UA/10340/01/01" issued="2022-04-12" expires="2027-04-12">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="20" price="45.00"/>
+                    <Dosage unit="mg" amount="200" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+            <Version form="ointment">
+                <Manufacturer name="Farmak">
+                    <Certificate number="UA/10341/04/01" issued="2022-04-12" expires="2027-04-12">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="tube" quantity="1" price="70.00"/>
+                    <Dosage unit="g" amount="4" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+    <Medicine id="MED-005">
+        <Name>Ascorbic Acid</Name>
+        <Pharm>Lekhim</Pharm>
+        <Group>vitamin</Group>
+        <Analogs>
+            <Analog>Cevitamin</Analog>
+            <Analog>Redoxon</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="tablet">
+                <Manufacturer name="Lekhim">
+                    <Certificate number="UA/08123/01/01" issued="2021-11-30" expires="2026-11-30">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="10" price="12.00"/>
+                    <Dosage unit="mg" amount="50" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+            <Version form="powder">
+                <Manufacturer name="Darnitsa">
+                    <Certificate number="UA/09990/02/01" issued="2023-07-07" expires="2028-07-07">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="sachet" quantity="10" price="95.00"/>
+                    <Dosage unit="g" amount="1" timesPerDay="1"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+    <Medicine id="MED-006">
+        <Name>Cholecalciferol</Name>
+        <Pharm>Zdorovye</Pharm>
+        <Group>vitamin</Group>
+        <Analogs>
+            <Analog>Aquadetrim</Analog>
+            <Analog>Vigantol</Analog>
+        </Analogs>
+        <Versions>
+            <Version form="drops">
+                <Manufacturer name="Zdorovye">
+                    <Certificate number="UA/12500/01/01" issued="2024-05-18" expires="2029-05-18">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="bottle" quantity="1" price="135.00"/>
+                    <Dosage unit="mcg" amount="25" timesPerDay="1"/>
+                </Manufacturer>
+            </Version>
+            <Version form="capsule">
+                <Manufacturer name="Kyivmedpreparat">
+                    <Certificate number="UA/12501/02/01" issued="2024-05-18" expires="2029-05-18">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="30" price="210.00"/>
+                    <Dosage unit="mcg" amount="25" timesPerDay="1"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+
+</Medicines>
