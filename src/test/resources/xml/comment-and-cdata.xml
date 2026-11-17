@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medicines>
+    <!-- a comment before the medicine -->
+    <Medicine id="MED-001">
+        <Name><![CDATA[Amoxicillin]]></Name>
+        <Pharm>Farmak</Pharm>
+        <Group>antibiotic</Group>
+        <!-- analogs follow -->
+        <Analogs>
+            <Analog>Ospamox</Analog>
+            <Analog>Flemoxin <![CDATA[Solutab]]></Analog>
+        </Analogs>
+        <Versions>
+            <Version form="capsule">
+                <Manufacturer name="Farmak">
+                    <Certificate number="UA/10234/01/01" issued="2021-03-15" expires="2026-03-15">
+                        <Organization>State Expert Center of the Ministry of Health</Organization>
+                    </Certificate>
+                    <Package type="blister" quantity="16" price="85.50"/>
+                    <Dosage unit="mg" amount="500" timesPerDay="3"/>
+                </Manufacturer>
+            </Version>
+        </Versions>
+    </Medicine>
+</Medicines>
