@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLInputFactory;
+import javax.xml.transform.TransformerConfigurationException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -49,5 +50,15 @@ class XmlFactoriesTest {
     @Test
     void xmlInputFactoryMergesAdjacentTextEvents() {
         assertEquals(true, XmlFactories.xmlInputFactory().getProperty(XMLInputFactory.IS_COALESCING));
+    }
+
+    @Test
+    void transformerFactoryUsesSecureProcessingAndBlocksExternalAccess()
+            throws TransformerConfigurationException {
+        var factory = XmlFactories.transformerFactory();
+
+        assertTrue(factory.getFeature(XMLConstants.FEATURE_SECURE_PROCESSING));
+        assertEquals("", factory.getAttribute(XMLConstants.ACCESS_EXTERNAL_DTD));
+        assertEquals("", factory.getAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET));
     }
 }
