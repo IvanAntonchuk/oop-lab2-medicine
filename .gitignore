@@ -23,6 +23,9 @@ out/
 *.log
 logs/
 
+# Generated output
+output/
+
 # JaCoCo
 jacoco.exec
 
